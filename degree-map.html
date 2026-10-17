@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Degree Map | Srushti Upadhyay</title>
+<meta name="description" content="How Degree Map, a degree planner used by 2,000+ students and advisors at Boston University, was rebuilt so the interface explains its own rules.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Degree Map | Srushti Upadhyay">
+<meta property="og:description" content="How Degree Map, a degree planner used by 2,000+ students and advisors at Boston University, was rebuilt so the interface explains its own rules.">
+<meta property="og:url" content="https://srushtiu1.github.io/portfolio_new1/degree-map.html">
+<meta property="og:image" content="https://srushtiu1.github.io/portfolio_new1/assets/images/share/degree-map.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/icon-192.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/case-study.css">
+
+<!-- Umami analytics -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="733bc268-2fc8-4b33-a353-a74e0b7820bf"></script>
+</head>
+<body data-page="case" data-project="Degree Map">
+<div class="prog" id="prog"></div>
+<div id="site-header"></div>
+
+<div class="shell">
+<nav class="outline" id="outline" aria-label="Case study outline"><div class="ph">Outline</div></nav>
+
+<main>
+  <div class="hero">
+    <div class="eyebrow">Interaction design &middot; EdTech</div>
+    <h1>Degree Map</h1>
+    <p class="sub">A degree planning tool used by 2,000+ students and advisors each semester at Boston University. Rebuilt so the interface explains its own rules instead of requiring documentation.</p>
+    <div class="meta">
+      <div><small>Company</small><span>Boston University</span></div>
+      <div><small>Role</small><span>UX Designer</span></div>
+      <div><small>Duration</small><span>3 years</span></div>
+      <div><small>Platform</small><span>Responsive Web</span></div>
+      <div><small>Industry</small><span>EdTech</span></div>
+      <div><small>Team size</small><span>7</span></div>
+    </div>
+    <div class="tldr" aria-label="Summary">
+      <div><small class="mono">Problem</small><span>Students used the planner only a few times a year, so its rules for prerequisites, locking and saving needed a manual to understand.</span></div>
+      <div><small class="mono">What I designed</small><span>A rebuilt interaction model where semester states, auto-save and drag and drop explain themselves, used by 2,000+ students and advisors each semester.</span></div>
+      <div><small class="mono">Key principle</small><span>Guide before blocking, explain when rejecting, and confirm when something important changes.</span></div>
+    </div>
+    <div class="canvas"><div class="tag mono">Degree Map / Final design</div><div class="fr"><img width="4320" height="3723" src="assets/images/degree-map-hero.png" alt="Degree Map final design, main populated screen" class="zm"></div></div>
+  </div>
+
+  <section id="overview" data-t="Overview">
+    <div class="sh"><div class="se">Overview</div><h2>The product worked. The interaction model didn't.</h2></div>
+    <div class="sbody">    <p class="b">Degree Map began as an engineering build to track requirements and organize semesters. I worked on it for five years in total: two as a developer who also handled design, then three as its UX designer. That long view let me see exactly where the interaction model broke down.</p>
+    <div class="quote">This wasn't about making the product look better. It was about making the system understandable without requiring students to learn it first.</div></div>
+  </section>
+
+  <section id="role" data-t="Responsibilities">
+    <div class="sh"><div class="se">My responsibilities</div><h2>Ownership across product behavior, interaction, and implementation</h2></div>
+    <div class="sbody">    <div class="cards c2">
+      <div class="card"><h3>Product &amp; Interaction Direction</h3><p>Turning recurring interaction failures, surfaced through long-term exposure, into prioritized decisions.</p></div>
+      <div class="card"><h3>Information Architecture</h3><p>Restructuring semesters, requirements, and progress so students see their current state at a glance.</p></div>
+      <div class="card"><h3>Interaction System &amp; Logic</h3><p>Translating prerequisite rules, semester states, and drag-and-drop constraints into interface behavior.</p></div>
+      <div class="card"><h3>Accessibility &amp; Feedback</h3><p>Ensuring important states and system feedback remain clear beyond color alone.</p></div>
+    </div></div>
+  </section>
+
+  <section id="existing" data-t="Existing experience">
+    <div class="sh"><div class="se">The existing experience</div><h2>Students had to figure out too much for themselves</h2></div>
+    <div class="sbody">    <p class="b">Version 1 was built for correctness, not communication. Prerequisite rules, locking, and course mapping existed, but the interface didn't explain them when students encountered them.</p>
+    <div class="canvas"><div class="tag mono">Version 1 / Interaction failures identified</div><div class="fr"><img width="3200" height="2130" src="assets/images/degree-map-wireframe.webp" alt="Version 1 wireframe with annotated interaction failures" class="zm" loading="lazy"></div></div>
+    <div class="notes">
+      <div class="note"><i>1</i><div><strong>No clear starting point</strong>Instructions were needed just to get students started.</div></div>
+      <div class="note"><i>2</i><div><strong>No semester state language</strong>Completed and upcoming semesters looked too similar.</div></div>
+      <div class="note"><i>3</i><div><strong>Empty slots lacked guidance</strong>Blank "+ Add Course" areas didn't say what to do next.</div></div>
+      <div class="note"><i>4</i><div><strong>Planning and requirements were disconnected</strong>The two areas didn't visually reinforce each other.</div></div>
+      <div class="note"><i>5</i><div><strong>Manual saving created risk</strong>Students had to remember to save while switching contexts.</div></div>
+      <div class="note"><i>6</i><div><strong>Color carried too much meaning</strong>Some categories relied on color without text signals.</div></div>
+    </div>
+    <h3 style="margin:44px 0 0;font-size:15px">Same product. A different interaction model.</h3>
+    <div class="cmp" id="cmp" style="--p:50%">
+      <img width="4320" height="2757" src="assets/images/degree-map-redesign.png" alt="Current, redesigned Degree Map" loading="lazy">
+      <div class="top"><img width="3200" height="2130" src="assets/images/degree-map-wireframe.webp" alt="Version 1, original degree planner" loading="lazy"></div>
+      <div class="hd"></div>
+      <span class="lab l">Version 1: what we shipped</span><span class="lab r">Current: what students needed</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare Version 1 with the current design">
+    </div></div>
+  </section>
+
+  <section id="users" data-t="Users">
+    <div class="sh"><div class="se">The users</div><h2>Students navigating a consequential decision with limited product familiarity</h2></div>
+    <div class="sbody">    <p class="b">Students were not frequent users of the planning system. They needed to understand their progress, know what they could and could not do, trust that their work was saved, and share their plan with an advisor without extra steps.</p></div>
+  </section>
+
+  <section id="system" data-t="Interaction system">
+    <div class="sh"><div class="se">Interaction system</div><h2>How the system explains itself</h2></div>
+    <div class="sbody">    <div class="flow">
+      <div class="node"><span class="num mono">01</span><b>System rule</b><small>Prerequisite / state</small></div><span class="ar">&rarr;</span>
+      <div class="node"><span class="num mono">02</span><b>Visible state</b><small>Locked / available</small></div><span class="ar">&rarr;</span>
+      <div class="node"><span class="num mono">03</span><b>User action</b><small>Drag / edit / add</small></div><span class="ar">&rarr;</span>
+      <div class="node"><span class="num mono">04</span><b>Feedback</b><small>Confirmation / error</small></div><span class="ar">&rarr;</span>
+      <div class="node f"><span class="num mono">05</span><b>Next step</b><small>User knows what to do</small></div>
+    </div>
+    <div class="principle"><small class="mono">DESIGN PRINCIPLE</small>A system should guide before it blocks, explain when it rejects, and confirm when it changes something important.</div></div>
+  </section>
+
+  <section id="tokens" data-t="Design system">
+    <div class="sh"><div class="se">Design system</div><h2>A small token system, not a one-off skin</h2></div>
+    <div class="sbody">    <p class="b">Course categories, semester states, and status feedback share the same base tokens: four category colors, zinc tint grouping, and a consistent type and spacing scale, so new states need no new visual language.</p></div>
+  </section>
+
+  <section id="decisions" data-t="Key decisions">
+    <div class="sh"><div class="se">Key interaction decisions</div><h2>Four decisions that closed the gap between Version 1 and what students needed</h2></div>
+    <div class="sbody">    <div class="dec">
+      <div class="eyebrow mono">Decision 01</div>
+      <h3>Semester states communicate without explanation</h3>
+      <p>Completed, upcoming, and empty semesters needed distinct states, so students could orient themselves without decoding the interface.</p>
+      <p class="rej"><b>Considered:</b> color-coded semester backgrounds with a legend. Rejected because a legend is one more thing to learn, and color alone fails students with color vision deficiency.</p>
+      <div class="shots s3">
+        <figure><img width="1512" height="1038" src="assets/images/degree-map-semester-empty.png" alt="Empty semester state" class="zm" loading="lazy"><figcaption>Empty state: semester ready to plan</figcaption></figure>
+        <figure><img width="1512" height="1038" src="assets/images/degree-map-semester-upcoming.png" alt="Upcoming semester state" class="zm" loading="lazy"><figcaption>Upcoming state: not yet active</figcaption></figure>
+        <figure><img width="1512" height="1038" src="assets/images/degree-map-semester-locked.png" alt="Locked semester state" class="zm" loading="lazy"><figcaption>Locked state: completed semester</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="dec">
+      <div class="eyebrow mono">Decision 02</div>
+      <h3>Auto-save removes anxiety without removing trust</h3>
+      <p>Students often lost work switching tabs because saving was manual. Removing the Save button fixed that. Because I built the save endpoint myself, I knew a save could fail silently on a poor connection, so the toast needed to confirm a successful save rather than simply respond to the click.</p>
+      <p class="rej"><b>Considered:</b> keeping the Save button and adding an unsaved-changes warning. Rejected because the warning still interrupts students mid-task, and forgetting to save was the problem in the first place.</p>
+      <div class="shots"><figure><img width="3090" height="705" src="assets/images/degree-map-autosave-toasts.png" alt="Auto-saved indicator with toast confirmation" class="zm" loading="lazy"><figcaption>Auto-saved indicator with a toast confirmation after an edit</figcaption></figure></div>
+    </div>
+
+    <div class="dec">
+      <div class="eyebrow mono">Decision 03</div>
+      <h3>The empty state replaces the tutorial</h3>
+      <p>The empty state shows what students are working toward and gives one clear starting point. Adding a year auto-creates its Fall and Spring semesters.</p>
+      <p class="rej"><b>Considered:</b> a guided walkthrough on first visit. Rejected because students plan a few times a year, so a tour would be skipped or forgotten by next semester.</p>
+      <div class="shots"><figure><img width="4320" height="3033" src="assets/images/degree-map-empty-state.png" alt="Degree Map empty state, first-run screen before a student adds a year" class="zm" loading="lazy"><figcaption>Empty state: shown before a student's first action</figcaption></figure></div>
+    </div>
+
+    <div class="dec">
+      <div class="eyebrow mono">Decision 04</div>
+      <h3>Drag and drop with system awareness</h3>
+      <p>Constraints surface only when relevant: valid zones highlight, invalid drops get a specific reason, like a missing prerequisite. That logic already existed on the backend. The work was exposing it, not leaving students to guess.</p>
+      <p class="rej"><b>Considered:</b> hiding courses a student isn't eligible for. Rejected because students then can't see what they're working toward, and a blocked drop with a reason teaches the rule.</p>
+      <div class="shots"><figure class="vid"><video poster="assets/video/degree-map-drag-drop.jpg" width="1440" height="704" muted loop playsinline preload="none" aria-label="A blocked drop explains why, then a valid drop saves. Recreated from the original screens with sample data."><source src="assets/video/degree-map-drag-drop.webm" type="video/webm"><source src="assets/video/degree-map-drag-drop.mp4" type="video/mp4"></video><figcaption>A blocked drop explains why, then a valid drop saves. Recreated from the original screens with sample data.</figcaption></figure></div>
+     
+    </div></div>
+  </section>
+
+  <section id="a11y" data-t="Accessibility">
+    <div class="sh"><div class="se">Accessibility</div><h2>A constraint from the beginning, not the end</h2></div>
+    <div class="sbody">    <p class="b">Version 1 relied heavily on color for some categories. Reviewing the interface with accessibility in mind led us to identify where color needed additional cues, particularly for important states and feedback.</p>
+    <div class="cards c3">
+      <div class="card"><h3>Semester states</h3><p>Icon, visual treatment, and text badge provide multiple signals for state.</p></div>
+      <div class="card"><h3>Auto-save status</h3><p>Icon, text, and color communicate the save state redundantly.</p></div>
+      <div class="card"><h3>Error states</h3><p>Specific text explains what happened and what the student should do next.</p></div>
+    </div>
+    <div class="imp"><h3>What we would improve next</h3><ul class="bl">
+      <li>Course category indicators currently rely on color. I'd add a non-color cue so category distinctions don't depend on color alone.</li>
+      <li>Full WCAG 2.1 AA contrast audit</li>
+      <li>Testing with assistive technology and a color blindness simulator</li></ul></div></div>
+  </section>
+
+  <section id="tradeoffs" data-t="Trade-offs">
+    <div class="sh"><div class="se">Constraints &amp; trade-offs</div><h2>What shaped these decisions, and what's missing</h2></div>
+    <div class="sbody">    <p class="b">The design work was carried out within a legacy system I couldn't fully rebuild, making it more practical to expose existing logic than rewrite it. Failures surfaced through support requests, advisor feedback, and direct observation rather than structured usability testing.</p>
+    <p class="b">Usage, adoption, and bug-report volume were tracked before and after the redesign. A formal usability measure such as task completion time was not captured, so the bug-report reduction provides the clearest quantitative comparison.</p></div>
+  </section>
+
+  <div class="tint">
+  <section id="learned" data-t="What I learned">
+    <div class="sh"><div class="se">What I learned</div><h2>Observations became design priorities</h2></div>
+    <div class="sbody">    <p class="b">Rather than treat each issue as an isolated bug, I grouped recurring problems by what they revealed, and each observation led directly to a design response.</p>
+    <div class="cards c3">
+      <div class="card"><span class="num mono">01</span><h3>Instructions were a symptom</h3><p>Documentation revealed a communication problem.</p></div>
+      <div class="card"><span class="num mono">02</span><h3>System rules were invisible</h3><p>Prerequisites, locking, saving: the rules existed, but nothing surfaced them.</p></div>
+      <div class="card"><span class="num mono">03</span><h3>Students needed confidence, not complexity</h3><p>Infrequent use required a self-explanatory interface.</p></div>
+    </div></div>
+  </section></div>
+
+  <section id="outcomes" data-t="Outcomes">
+    <div class="sh"><div class="se">Outcomes</div><h2>The strongest signal was behavior change</h2></div>
+    <div class="sbody">    <p class="b">Before this, students planned on paper and relied on advisors to catch errors. A shared, validated system moved much of that work into one place, contributing to strong faculty adoption.</p>
+    <div class="cards c3">
+      <div class="card"><div class="big">2,000+</div><span class="tg mono">Measured</span><h3>Students and advisors each semester</h3><p>Platform usage activity across enrolled programs, tracked each semester.</p></div>
+      <div class="card"><div class="big">~80%</div><span class="tg mono">Measured</span><h3>Fewer bug reports after the redesign</h3><p>Version 1 shipped with a high bug-report volume; the revised interaction model brought that down by roughly 80%.</p></div>
+      <div class="card"><div class="big">3 months</div><span class="tg mono">Adoption</span><h3>Until other departments asked for access</h3><p>Requests came without formal promotion or a rollout campaign. They asked because they'd seen it in use.</p></div>
+    </div>
+    <p class="b" style="margin-top:20px">The redesign turned a fragmented planning process into one shared, more reliable workflow.</p></div>
+  </section>
+
+  <div class="tint">
+  <section id="reflection" data-t="Reflection">
+    <div class="sh"><div class="se">Reflection</div><h2>What I'd carry into the next product</h2></div>
+    <div class="sbody">    <p class="b">Long-term exposure only helps when it changes the questions you ask. Treat system logic, user behavior, and interface behavior as one design problem.</p>
+    <div class="cards c2">
+      <div class="card"><h3>What worked</h3><ul class="bl"><li>Turning recurring support issues into product-level design priorities.</li><li>Treating system logic, interaction, and implementation as one design problem.</li></ul></div>
+      <div class="card"><h3>What I'd do differently</h3><ul class="bl"><li>Model prerequisite logic alongside layout earlier, so both evolve together.</li><li>Test lo-fi flows earlier across the full range of student digital literacy.</li></ul></div>
+    </div></div>
+  </section></div>
+
+  <section id="next" data-t="Next priorities">
+    <div class="sh"><div class="se">Next priorities</div><h2>Where the product could go next</h2></div>
+    <div class="sbody">    <p class="b">Three directions stood out based on remaining user needs, rather than a long feature backlog.</p>
+    <div class="cards c3">
+      <div class="card"><span class="tg mono" style="margin-top:0">Next</span><h3>Mobile experience</h3><p>Simplified semester cards and interactions for smaller screens.</p></div>
+      <div class="card"><span class="tg mono" style="margin-top:0">Next</span><h3>Advisor workflow</h3><p>A dedicated way for advisors to review plans and flag conflicts.</p></div>
+      <div class="card"><span class="tg mono" style="margin-top:0">Explore</span><h3>Proactive planning</h3><p>Surface patterns and warnings from the planning data, not just react to input.</p></div>
+    </div></div>
+  </section>
+
+  <section class="more" aria-labelledby="more-h">
+    <div class="moreh"><div><span class="mono">More work</span><h2 id="more-h">Keep exploring</h2></div><a href="index.html#work">All work &rarr;</a></div>
+    <div class="mgrid">
+      <a class="mc" href="ask-fernbook.html">
+        <div class="mth"><img src="assets/images/share/ask-fernbook.jpg" width="1200" height="630" alt="" loading="lazy"></div>
+        <div class="mbd"><div class="mtp"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="4" y="1.5" width="8" height="13" rx="1.75"/><path d="M7 12.2h2"/></svg><span class="mtg mono">Concept</span></div><b>Ask Fernbook</b><small>A voice and text AI assistant for small business finance.</small><span class="mgo">View case study <i>&rarr;</i></span></div>
+      </a>
+      <a class="mc" href="decision-hub.html">
+        <div class="mth"><img src="assets/images/share/decision-hub.jpg" width="1200" height="630" alt="" loading="lazy"></div>
+        <div class="mbd"><div class="mtp"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="1.75"/><path d="M1.5 5.5h13"/><path d="M3.6 4h.01M5.2 4h.01M6.8 4h.01" stroke-width="1.6"/></svg><span class="mtg mono">Not shipped</span></div><b>Decision Intelligence Hub</b><small>An executive dashboard with approvals and scenario comparison.</small><span class="mgo">View case study <i>&rarr;</i></span></div>
+      </a>
+      <a class="mc" href="patient-monitoring.html">
+        <div class="mth"><img src="assets/images/share/patient-monitoring.jpg" width="1200" height="630" alt="" loading="lazy"></div>
+        <div class="mbd"><div class="mtp"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="1.75"/><path d="M1.5 5.5h13"/><path d="M3.6 4h.01M5.2 4h.01M6.8 4h.01" stroke-width="1.6"/></svg><span class="mtg mono">Shipped</span></div><b>Patient Monitoring System</b><small>Clinic billing and check-in with live wait status.</small><span class="mgo">View case study <i>&rarr;</i></span></div>
+      </a>
+    </div>
+  </section>
+
+</main>
+</div>
+<div id="site-footer"></div>
+
+<div class="lb" id="lb" role="dialog" aria-label="Image viewer"><img alt=""></div>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/case-study.js"></script>
+</body>
+</html>

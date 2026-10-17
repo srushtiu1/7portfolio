@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patient Monitoring System | Srushti Upadhyay</title>
+<meta name="description" content="Patient Monitoring System, a clinic system for check-in, billing and live wait status, designed and built end to end.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Patient Monitoring System | Srushti Upadhyay">
+<meta property="og:description" content="Patient Monitoring System, a clinic system for check-in, billing and live wait status, designed and built end to end.">
+<meta property="og:url" content="https://srushtiu1.github.io/portfolio_new1/patient-monitoring.html">
+<meta property="og:image" content="https://srushtiu1.github.io/portfolio_new1/assets/images/share/patient-monitoring.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/icon-192.png">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/case-study.css">
+
+<!-- Umami analytics -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="733bc268-2fc8-4b33-a353-a74e0b7820bf"></script>
+</head>
+<body data-page="case" data-project="Patient Monitoring System">
+<div class="prog" id="prog"></div>
+<div id="site-header"></div>
+
+<div class="shell">
+<nav class="outline" id="outline" aria-label="Case study outline"><div class="ph">Outline</div></nav>
+
+<main>
+  <div class="hero">
+    <div class="eyebrow">Healthcare Admin &middot; Independent Build</div>
+    <h1>Patient Monitoring System</h1>
+    <p class="sub">A clinic system for patient records, billing, and check-in, designed around the workflows of doctors and receptionists and built end to end.</p>
+    <div class="meta"><div><small>Client</small><span>CarePlus Clinic</span></div><div><small>Role</small><span>UX Design &amp; Development</span></div><div><small>Duration</small><span>1 year</span></div><div><small>Platform</small><span>Responsive Web</span></div><div><small>Industry</small><span>Healthcare</span></div><div><small>Team size</small><span>1</span></div></div>
+    <div class="tldr" aria-label="Summary">
+      <div><small class="mono">Problem</small><span>A small clinic tracked waits, records and payments on paper and spreadsheets, and lost patients to long, untracked waits.</span></div>
+      <div><small class="mono">What I designed</small><span>One system for check-in, records and billing, with separate views for doctor and receptionist, built end to end and used daily for about two years.</span></div>
+      <div><small class="mono">Key principle</small><span>Design around what each role needs to act on, not around permissions.</span></div>
+    </div>
+    <div class="canvas"><div class="tag mono">Patient Monitoring System / Check-in queue, wait time and billing</div><div class="fr"><img width="4320" height="2298" src="assets/images/patient-monitoring-hero.png" alt="Patient Monitoring System, check-in queue, wait-time status, and billing screen" class="zm"></div></div>
+  </div>
+
+  <section id="overview" data-t="Overview">
+    <div class="sh"><div class="se">Overview</div><h2>A clinic running on paper, spreadsheets, and memory</h2></div>
+    <div class="sbody">
+    <p class="b">Small private clinics often run on a mix of paper logs, spreadsheets, and memory: a receptionist tracking who's waited how long, a doctor reconstructing a patient's payment history by hand before writing a new bill. None of it is connected, and none of it scales past a handful of patients a day without someone quietly falling behind.</p>
+    <p class="b">Originally shipped in 2016, it's a single system covering patient records, billing, and check-in flow, designed for the two roles who'd actually use it day to day: the doctor and the receptionist.</p>
+    </div>
+  </section>
+
+  <section id="role" data-t="Responsibilities">
+    <div class="sh"><div class="se">My responsibilities</div><h2>End-to-end ownership, from database to interface</h2></div>
+    <div class="sbody">
+    <div class="cards c2"><div class="card"><h3>Role-Based Information Architecture</h3><p>Deciding what a receptionist needs to act on versus what a doctor needs for financial clarity, and designing two coherent views from one dataset.</p></div><div class="card"><h3>Queue &amp; Status Design</h3><p>Designing the color-coded wait-time system so a receptionist can scan a full waiting room in seconds.</p></div><div class="card"><h3>Billing Logic</h3><p>Designing how partial and excess payments resolve automatically, without a separate correction step.</p></div><div class="card"><h3>Full-Stack Implementation</h3><p>Building the system end to end (database, backend, and interface) as a single-person project.</p></div></div>
+    </div>
+  </section>
+
+  <section id="problem" data-t="The problem">
+    <div class="sh"><div class="se">The problem</div><h2>Two roles, two different relationships to the same information</h2></div>
+    <div class="sbody">
+    <p class="b">A receptionist needs to move quickly: check someone in, see who's waited too long, add a new patient without friction. A doctor needs financial clarity: what's owed, what's been overpaid, what a report says about the month. Building one system for both meant deciding, screen by screen, what each role actually needed to see and act on.</p>
+    </div>
+  </section>
+
+  <section id="wait" data-t="Wait-time design">
+    <div class="sh"><div class="se">Design decision worth naming</div><h2>Making wait time visible without making it a spreadsheet</h2></div>
+    <div class="sbody">
+    <p class="b">The clearest design problem in this system was the patient queue. A receptionist glancing at a waiting room needs to know, at a glance, who's been waiting dangerously long, without reading a timestamp column and doing the math themselves.</p>
+    <p class="rej"><b>Considered:</b> a sortable list with a minutes-waited column. Rejected because the receptionist would still have to read and compare numbers while someone is standing at the desk.</p>
+    <div class="status"><span class="chip"><i style="background:#16a34a"></i>Under 30 min</span><span class="chip"><i style="background:#eab308"></i>Over 30 min</span><span class="chip"><i style="background:#dc2626"></i>Over 1 hour</span><span class="chip"><i style="background:#06b6d4"></i>Checked out</span></div>
+    <p class="b">Once a patient is billed, their row updates again to reflect that, so the same queue tracks a patient from check-in through to checkout and billing without needing a separate screen.</p>
+    <div class="quote">The trade-off: the color system solves the at-a-glance problem well, but it leans on color alone to carry urgency, a real accessibility gap for anyone with color vision deficiency. If I revisited this, I'd pair each status with a shape or label, not just a color.</div>    </div>
+  </section>
+
+  <section id="walkthrough" data-t="System walkthrough">
+    <div class="sh"><div class="se">System walkthrough</div><h2>The rest of the system, built around each role's actual task</h2></div>
+    <div class="sbody">
+    <div class="cards c2"><div class="card"><h3>Billing &amp; Payments</h3><p>Bills and payments are tracked per patient, with partial or excess payments carried into the next cycle as a single running balance rather than a separate correction record.</p></div><div class="card"><h3>Role-Based Access</h3><p>Doctors can generate bills, manage payments, and access every report. Receptionists are scoped to check-in, check-out, and patient records.</p></div><div class="card"><h3>Reporting</h3><p>Daily, monthly, and patient-wise reports summarize financial activity and patient volume, exportable as PDF for records or sharing.</p></div><div class="card"><h3>Wait-Time Analysis</h3><p>Beyond the live queue, the system tracks average wait times over time, with full patient data exportable to Excel for further analysis.</p></div></div>
+    </div>
+  </section>
+
+  <section id="outcomes" data-t="Outcomes">
+    <div class="sh"><div class="se">Business outcomes</div><h2>A clinic that could see its own numbers for the first time</h2></div>
+    <div class="sbody">
+    <p class="b">The clinic was losing patients to long, untracked waits, and had no reliable way to track who owed what. The system shipped to CarePlus Clinic and stayed in active use for about two years while I supported it; the figures below are the clinic's own before/after comparison over that period, not an independently audited study.</p>
+    <div class="cards c2"><div class="card"><div class="big">60%</div><span class="tg mono">Measured</span><h3>Faster billing &amp; payment processing</h3><p>Reconciling partial payments and outstanding balances no longer meant recalculating from paper records by hand.</p></div><div class="card"><div class="big">30%</div><span class="tg mono">Observed</span><h3>Increase in patient retention</h3><p>Reported by the clinic after the wait-time and billing issues were addressed.</p></div></div>    </div>
+  </section>
+
+  <section id="constraints" data-t="Constraints">
+    <div class="sh"><div class="se">Constraints &amp; what I'd add</div><h2>What this project didn't cover</h2></div>
+    <div class="sbody">
+    <p class="b">Because this was a single-person build for one small clinic, the design wasn't validated across a larger or more diverse set of clinical workflows.</p>
+    </div>
+  </section>
+
+  <section id="future" data-t="Future scope">
+    <div class="sh"><div class="se">Future scope</div><h2>Prescriptions and patient history were the planned next phase</h2></div>
+    <div class="sbody">
+    <p class="b">Billing, payments, and check-in were built first and worked as a complete system on their own. The next phase, designing prescription management and full patient history records, was the intended continuation once that foundation was stable, but it wasn't reached in this build.</p>
+    </div>
+  </section>
+
+  <section id="reflection" data-t="Reflection">
+    <div class="sh"><div class="se">Reflection</div><h2>What this taught me about designing for two very different users in one system</h2></div>
+    <div class="sbody">
+    <p class="b">This project pushed me to think concretely about role-based information architecture, not as a permissions checkbox, but as a real design question: what does each person need to see, and what would just be noise for them?</p>
+    <div class="cards c2"><div class="card"><h3>What worked</h3><ul class="bl"><li>Designing the queue as a status system rather than a plain list with timestamps.</li><li>Splitting the doctor and receptionist views around what each role actually needed, not around permissions.</li></ul></div><div class="card"><h3>What I'd do differently</h3><ul class="bl"><li>Pair color with shape or text in the wait-time system so it doesn't rely on color alone.</li><li>Test the check-in flow with someone working a real front desk under time pressure.</li></ul></div></div>    </div>
+  </section>
+
+  <section class="more" aria-labelledby="more-h">
+    <div class="moreh"><div><span class="mono">More work</span><h2 id="more-h">Keep exploring</h2></div><a href="index.html#work">All work &rarr;</a></div>
+    <div class="mgrid">
+      <a class="mc" href="degree-map.html">
+        <div class="mth"><img src="assets/images/share/degree-map.jpg" width="1200" height="630" alt="" loading="lazy"></div>
+        <div class="mbd"><div class="mtp"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="1.75"/><path d="M1.5 5.5h13"/><path d="M3.6 4h.01M5.2 4h.01M6.8 4h.01" stroke-width="1.6"/></svg><span class="mtg mono">Shipped</span></div><b>Degree Map</b><small>A degree planner where drag and drop enforces prerequisites.</small><span class="mgo">View case study <i>&rarr;</i></span></div>
+      </a>
+      <a class="mc" href="ask-fernbook.html">
+        <div class="mth"><img src="assets/images/share/ask-fernbook.jpg" width="1200" height="630" alt="" loading="lazy"></div>
+        <div class="mbd"><div class="mtp"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="4" y="1.5" width="8" height="13" rx="1.75"/><path d="M7 12.2h2"/></svg><span class="mtg mono">Concept</span></div><b>Ask Fernbook</b><small>A voice and text AI assistant for small business finance.</small><span class="mgo">View case study <i>&rarr;</i></span></div>
+      </a>
+      <a class="mc" href="decision-hub.html">
+        <div class="mth"><img src="assets/images/share/decision-hub.jpg" width="1200" height="630" alt="" loading="lazy"></div>
+        <div class="mbd"><div class="mtp"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="11" rx="1.75"/><path d="M1.5 5.5h13"/><path d="M3.6 4h.01M5.2 4h.01M6.8 4h.01" stroke-width="1.6"/></svg><span class="mtg mono">Not shipped</span></div><b>Decision Intelligence Hub</b><small>An executive dashboard with approvals and scenario comparison.</small><span class="mgo">View case study <i>&rarr;</i></span></div>
+      </a>
+    </div>
+  </section>
+
+</main>
+</div>
+<div id="site-footer"></div>
+
+<div class="lb" id="lb" role="dialog" aria-label="Image viewer"><img alt=""></div>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/case-study.js"></script>
+</body>
+</html>
